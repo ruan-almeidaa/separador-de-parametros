@@ -1,0 +1,80 @@
+<%-include ('./partials/header.ejs') %> 
+<body>
+    <%-include ('./partials/navbar.ejs') %>
+
+    <div class="container">
+
+        <hr>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h2>Cadastro de procedure e seus parâmetros!</h2>
+            </div>
+
+            <div class="card-body p-5" >
+                <br>
+                <form method="post" action="/procedure/cadastrando">
+
+                    <div class="col-12">
+                        <label for="nameProcedure">Nome da Procedure</label>
+                        <input type="text" class="form-control" name="nameProcedure" id="nameProcedure" placeholder="ex: CGPR_BUSCA_REGRA_FISCAL">
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="db">Banco de dados</label>
+                            <select class="form-select" id="db" name="db"aria-label="Default select example">
+                                <option selected value="1">SQL</option>
+                                <option value="2">Oracle</option>
+                              </select>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="nameProcedure">Versão do CIGAM</label>
+                            <input type="text" class="form-control" name="version" id="version" placeholder="ex: 211004.rc">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="col-12">
+                        <label for="params">Parâmetros</label>
+                        <textarea class="form-control" id="params" name="params" style="height: 180px"
+                        placeholder=
+"ex:
+p_codigoMaterial varchar2,
+p_idRegraFiscal float,
+p_tipoMovimento varchar2,
+p_inscrito int default 1,
+p_tipoOperacao varchar2 default ' ',
+p_percISSmunic float default 0,
+p_percISSmunicEntrega float default 0,
+p_retornaCompete int default 0,
+p_quantidade float default 0,
+p_conversor_TG float default 0,
+p_prTotalitem float default 0,
+p_ufDestino varchar2 default ' ',
+p_unidNegocio varchar2 default ' ',
+p_tipoEmpContribIPI int default 0,  
+p_localoperacao varchar2 default ' ',
+p_origerMat_usr char  default ' ',
+p_tipoNota char default ' ',
+p_tipoOperacaoCapa varchar2 default ' ',
+p_usuario varchar2 default ' ' "></textarea>
+
+                    </div>
+
+                    <br>
+
+                <button class="btn btn-success">Cadastrar</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

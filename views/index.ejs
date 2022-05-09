@@ -1,0 +1,40 @@
+<%-include ('partials/header.ejs') %> 
+<body>
+    <%-include ('partials/navbar.ejs') %>
+
+    <div class="container">
+        <br>
+        <h2>Procedures e Functions!</h2>
+        <a href="/procedure/cadastrar" class="btn btn-success">Cadastrar nova</a>
+        <br>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Banco de dados</th>
+                    <th>Versão</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% procedures.forEach(procedure => { %>
+                    <tr>
+                        <th><%= procedure.nameProcedure %></th>
+                        <th><%= procedure.bancoProcedure %></th>
+                        <th><%= procedure.versaoProcedure %></th>
+                        <th><%= play %></th>
+                    </tr>
+                <% }) %>
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</body>
+</html>
