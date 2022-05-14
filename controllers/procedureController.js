@@ -9,30 +9,23 @@ router.get("/procedure/cadastrar", (req,res) =>{
 });
 
 
-
-
-
-
-
 router.post("/procedure/cadastrando", (req,res) =>{
     let nameProcedure = req.body.nameProcedure;
     let db = req.body.db;
-    let version = req.body.version;
+    let versao = req.body.version;
     let params = req.body.params;
-    let paramsStr = " ";
 
-    
-    
-    params = params.replace(/(\r\n|\n|\r)/gm, "");
-    let paramsTr = params.trim();
-    
-    paramsTr = paramsTr.split(',');
-    res.send(paramsTr);
-    
-    paramsTr.forEach(param => {
-        console.log(param);
-        paramsStr = paramsStr + ',' + param.substring(0, param.indexOf(' '));
-    });
+    let paramsClear = params.trim();
+    let paramsArr = paramsClear.split(',');
+    let paramsJson = JSON.stringify(paramsArr);
+
+    ProcedureModel.create({
+        nameProcedure: nameProcedure,
+        versaoProcedure: versao,
+        bancoProcedure: db
+    }).then(() =>{
+        res.redirect("/");
+    })
 
     
 

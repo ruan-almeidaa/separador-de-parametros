@@ -10,6 +10,17 @@ body{
 
 #barra-navegacao{
     background-color: #ff7811;
+    padding-left: 5%;
+}
+
+#home{
+    color: #ffff;
+    font-size: 30px;
+}
+
+#exec{
+    color: #ff7811;
+    font-size: large;
 }
 
 @media screen and (max-width: 720px) {

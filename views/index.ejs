@@ -22,9 +22,22 @@
                 <% procedures.forEach(procedure => { %>
                     <tr>
                         <th><%= procedure.nameProcedure %></th>
-                        <th><%= procedure.bancoProcedure %></th>
+                        <% if (procedure.bancoProcedure == 1) { %>
+                            <td>SQL</td>
+                         <% } else { %>
+                            <td>Oracle</td>
+                        <%}%>
                         <th><%= procedure.versaoProcedure %></th>
-                        <th><%= play %></th>
+
+                        <th>
+
+                            <a href="/procedure/executar/<%= procedure.idProcedure %>">
+                                <i class="fas fa-play-circle" id="exec"></i>
+                            </a>
+
+                        </th>
+
+                        
                     </tr>
                 <% }) %>
 
