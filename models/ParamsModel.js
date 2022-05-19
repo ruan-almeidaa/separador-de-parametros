@@ -10,7 +10,7 @@ const ParamsModel = connection.define('params',{
         autoIncrement:true
     },
 
-    nameParam:{
+    param:{
         type: Sequelize.STRING,
         allowNull: false
     }

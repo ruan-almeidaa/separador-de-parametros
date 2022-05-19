@@ -1,0 +1,41 @@
+<%-include ('./partials/header.ejs') %> 
+<body>
+    <%-include ('./partials/navbar.ejs') %>
+
+    <div class="container">
+        <br>
+        <h2> <%= procedure.nameProcedure %> </h2>
+        <br>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Parâmetros da procedure</th>
+                    <th>Parâmetros enviados</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <% for(var i=0; i < paramsCadastradosArr.length; i++) { %>
+                    <tr>
+
+                        <td>
+                            <%= paramsCadastradosArr[i].param %>
+                        </td>
+
+                        <td>
+                            <%= paramsRecebidosArr[i] %>
+                        </td>
+                    </tr>
+                <% } %>
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<%-include ('./partials/header.ejs') %> 
+<body>
+    <%-include ('./partials/navbar.ejs') %>
+
+    <div class="container" id="containerExec">
+        <form method="post" action="/procedure/exec">
+
+        
+
+            <div class="col-12">
+                
+                <label for="nameProcedure">Informe os parâmetros da procedure</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                        exec <%= procedure.nameProcedure %>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" name="params" id="inlineFormInputGroupUsername2" placeholder="ex: 'E', '001314', '1', 56561, '3', 'RS', 0, 0, 0, ' ', ' ', 18.00000, '2102A', ' ', 'PAD', 0.00, 0.00, 0.00">
+                    
+                </div>
+
+                <div>
+                    <input type="hidden" name="idProcedure" value="<%= procedure.idProcedure %>">
+                </div>
+                <hr>
+                <div>
+                    <button class="btn btn-success">Separar parâmetros</button>
+                </div>
+                
+            </div>
+    </form>
+
+    </div>
+</body>
+</html>
+

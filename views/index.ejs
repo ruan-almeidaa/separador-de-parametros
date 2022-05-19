@@ -21,21 +21,21 @@
             <tbody>
                 <% procedures.forEach(procedure => { %>
                     <tr>
-                        <th><%= procedure.nameProcedure %></th>
+                        <td><%= procedure.nameProcedure %></td>
                         <% if (procedure.bancoProcedure == 1) { %>
                             <td>SQL</td>
                          <% } else { %>
                             <td>Oracle</td>
                         <%}%>
-                        <th><%= procedure.versaoProcedure %></th>
+                        <td><%= procedure.versaoProcedure %></td>
 
-                        <th>
+                        <td>
 
-                            <a href="/procedure/executar/<%= procedure.idProcedure %>">
+                            <a href="/procedure/separar-parametros/<%= procedure.idProcedure %>">
                                 <i class="fas fa-play-circle" id="exec"></i>
                             </a>
 
-                        </th>
+                        </td>
 
                         
                     </tr>
